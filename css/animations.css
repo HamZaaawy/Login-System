@@ -1,0 +1,105 @@
+@keyframes moving-head-down {
+  0% {
+    opacity: 0;
+    bottom: 300px;
+  }
+  100% {
+    opacity: 1;
+    bottom: 10px;
+  }
+}
+.moving-head-down {
+  animation: moving-head-down 2s forwards;
+}
+@keyframes moving-button-up {
+  0% {
+    opacity: 0;
+    top: 300px;
+  }
+  100% {
+    opacity: 1;
+    top: 10px;
+  }
+}
+.moving-button-up {
+  animation: moving-button-up 1s 1s forwards;
+}
+@keyframes moving-head-up {
+  0% {
+    opacity: 1;
+    bottom: 10px;
+  }
+  100% {
+    opacity: 0;
+    bottom: 300px;
+  }
+}
+.moving-head-up {
+  animation: moving-head-up 2s forwards;
+}
+@keyframes moving-button-down {
+  0% {
+    opacity: 1;
+    top: 10px;
+  }
+  100% {
+    opacity: 0;
+    top: 300px;
+  }
+}
+.moving-button-down {
+  animation: moving-button-down 1s 1s forwards;
+}
+@keyframes close-sides {
+  0% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleY(0);
+    opacity: 0;
+    display: none;
+  }
+}
+.close-sides {
+  animation: close-sides 0.5s 2s forwards;
+}
+@keyframes change {
+  0% {
+    transform: scaleY(0);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scaleY(0);
+  }
+}
+.change-back {
+  animation: change 5s forwards;
+}
+@keyframes opacity-text {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.opactiy-text {
+  animation: opacity-text 2s 1s forwards;
+}
+@keyframes wlecome-message {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.wlecome-message {
+  animation: wlecome-message 2s forwards;
+}

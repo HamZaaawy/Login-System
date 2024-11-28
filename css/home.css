@@ -1,0 +1,50 @@
+@font-face {
+  font-family: "Jos-sans";
+  src: url(../fonts/JosefinSans-VariableFont_wght.ttf);
+}
+@font-face {
+  font-family: "open-sans";
+  src: url(../fonts/open-sans.ttf);
+}
+:root {
+  --main-font: "open-sans";
+  --heading-font: "Jos-sans";
+  --main-color: rgb(0, 223, 194);
+}
+.main-color {
+  color: var(--main-color);
+}
+
+.h-font {
+  font-family: var(--heading-font) !important;
+}
+body {
+  font-family: var(--main-font) !important;
+}
+/* ========================= */
+.navbar {
+  left: 0;
+  top: 0;
+  right: 0;
+}
+.navbar-brand {
+  font-size: 35px !important;
+  font-family: var(--heading-font);
+  font-weight: bold;
+}
+nav a[target="_self"] {
+  text-decoration: none;
+  font-size: 16px;
+  padding: 8px 15px;
+  background-color: var(--main-color);
+  color: #fff;
+  border-radius: 5px;
+  transition: all 0.5s;
+}
+nav a[target="_self"]:hover {
+  background-color: rgb(3, 182, 158);
+}
+.text-side p {
+  font-size: 60px;
+  font-weight: 900;
+}

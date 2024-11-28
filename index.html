@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>Assignment</title>
+  </head>
+  <body>
+    <div class="intro-animation w-100 min-vh-100 position-absolute">
+      <div class="side-one position-relative">
+        <h1
+          class="position-absolute text-center start-50 translate-middle-x moving-head-down"
+        >
+          Welcome In <span>Store</span>
+        </h1>
+      </div>
+      <div class="side-two position-relative">
+        <div
+          class="buttons d-flex align-items-center position-absolute start-50 translate-middle-x moving-button-up"
+        >
+          <button class="btn btn-primary" id="btnOne">Sign in</button>
+          <span class="mx-2">Or</span>
+          <button class="btn btn-primary" id="btnTwo">Sign up</button>
+        </div>
+      </div>
+    </div>
+    <!-- ========== -->
+    <!-- ========== -->
+    <div
+      class="change w-100 min-vh-100 d-flex justify-content-center align-items-center"
+    >
+      <p class="h1">Waiting ...</p>
+    </div>
+    <!-- ========== -->
+    <!-- Register -->
+    <div
+      class="register w-100 min-vh-100 d-none justify-content-center align-items-center"
+    >
+      <div class="container d-flex justify-content-center align-items-center">
+        <div class="row align-items-center flex-column flex-md-row">
+          <div class="img-side col">
+            <img src="images/finger-register.jpg" class="w-100" alt="" />
+          </div>
+          <div class="form-side col">
+            <h2 class="h-font my-2">Sign up</h2>
+            <p class="mb-4 fw-normal text-secondary">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit sint
+              illum placeat eum.
+            </p>
+            <form autocomplete="off">
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nameInput"
+                  placeholder="ex:ahmed"
+                />
+                <label for="nameInput">Your Name</label>
+                <span class="warning-name d-none"
+                  >Name must have atleast 3 characters</span
+                >
+              </div>
+
+              <div class="form-floating mb-3">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="emailRegisterInput"
+                  placeholder="name@example.com"
+                />
+                <label for="emailRegisterInput">Email address</label>
+              </div>
+
+              <div class="form-floating">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="passwordRegisterInput"
+                  placeholder="name@example.com"
+                />
+                <label for="passwordRegisterInput">Password</label>
+                <span class="warning-password d-none"
+                  >Password must have atleast 8 characters</span
+                >
+              </div>
+
+              <div
+                class="alert-register alert d-none text-center fw-bold"
+              ></div>
+              <div class="text-center mt-4">
+                <button id="registerBtn" class="btn mb-3 py-2">Register</button>
+                <p>
+                  you already have account ?
+                  <span class="login-link">Sign in</span>
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ========== -->
+    <!-- Login  -->
+    <div
+      class="login w-100 min-vh-100 d-flex justify-content-center align-items-center"
+    >
+      <div class="container">
+        <div
+          class="row justify-content-center align-items-center flex-column flex-md-row"
+        >
+          <div class="img-side col">
+            <img src="images/login.jpg" alt="" class="w-100" />
+          </div>
+          <div class="form-side col">
+            <h2 class="h-font my-2">Sign in</h2>
+            <p class="mb-4 fw-normal text-secondary">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit sint
+              illum placeat eum.
+            </p>
+            <form autocomplete="off">
+              <div class="form-floating mb-3">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="emailLoginInput"
+                  placeholder="name@example.com"
+                />
+                <label for="emailLoginInput">Email address</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="passwordLoginInput"
+                  placeholder="name@example.com"
+                />
+                <label for="passwordLoginInput">Password</label>
+              </div>
+              <div
+                class="d-flex justify-content-between align-items-center mb-3"
+              >
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="flexCheckDefault"
+                  />
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Remeber me
+                  </label>
+                </div>
+                <a href="#">Forget Password</a>
+              </div>
+              <div class="login-alert alert text-center fw-bold d-none"></div>
+              <div class="text-center mt-4">
+                <button id="loginBtn" class="btn mb-3 py-2">Log in</button>
+                <p>
+                  if you don't have account
+                  <span class="register-link">Click Here</span>
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>

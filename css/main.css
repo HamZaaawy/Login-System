@@ -1,0 +1,122 @@
+/* Global variable and Classes */
+@font-face {
+  font-family: "Jos-sans";
+  src: url(../fonts/JosefinSans-VariableFont_wght.ttf);
+}
+@font-face {
+  font-family: "open-sans";
+  src: url(../fonts/open-sans.ttf);
+}
+:root {
+  --main-font: "open-sans";
+  --heading-font: "Jos-sans";
+  --main-color: rgb(0, 223, 194);
+}
+.main-color {
+  color: var(--main-color);
+}
+
+.h-font {
+  font-family: var(--heading-font) !important;
+}
+body {
+  font-family: var(--main-font) !important;
+}
+
+/* =========================== */
+/*===== Intro =====*/
+.side-one,
+.side-two {
+  width: 100%;
+  height: 50vh;
+  background: #fff;
+  position: relative;
+  z-index: 999999;
+}
+.side-one {
+  transform-origin: top center;
+}
+
+.side-two {
+  padding-top: 10px;
+  transform-origin: bottom center;
+}
+
+.side-one h1 {
+  font-size: 60px;
+  /* text-wrap: nowrap; */
+  font-family: var(--main-font);
+  font-weight: 700;
+  color: #000;
+}
+.side-one h1 span {
+  font-family: var(--heading-font) !important;
+  color: var(--main-color);
+  font-size: 65px;
+  font-weight: 900;
+}
+.side-two div {
+  opacity: 0;
+}
+.form-control:focus {
+  border: var(--main-color) !important;
+  box-shadow: 0 0 0 0.25rem rgb(0, 223, 194, 0.2);
+}
+.intro-animation div.buttons button {
+  background-color: var(--main-color);
+  border-color: var(--main-color);
+  color: #2a454e;
+  font-size: 17px !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+}
+.intro-animation div.buttons button:hover {
+  background-color: #00bea4;
+}
+.change {
+  /* background-color: #09c; */
+  background-color: #fff;
+  transform: scaleY(0);
+  position: absolute;
+  z-index: 56666;
+  transform-origin: top center;
+}
+.change p {
+  opacity: 0;
+}
+/* =============== */
+.login h2,
+.register h2 {
+  font-size: 40px;
+  font-weight: 700;
+}
+.login .form-check-input:checked {
+  background-color: var(--main-color) !important;
+  border: var(--main-color);
+}
+.login .form-check-input:focus {
+  box-shadow: 0 0 0 0.25rem rgb(0, 223, 194, 0.2);
+}
+.login .register-link,
+.register .login-link {
+  color: rgb(13, 110, 253);
+  text-decoration: underline;
+  cursor: pointer;
+}
+.login button,
+.register button {
+  font-size: 20px;
+  width: 60%;
+  background-color: var(--main-color);
+  color: #2a454e;
+}
+.login button:hover,
+.register button:hover {
+  background-color: #00bea4;
+}
+.warning-password,
+.warning-name {
+  font-size: 13px;
+  font-family: var(--main-font);
+  color: rgba(0, 0, 0, 0.6);
+}
