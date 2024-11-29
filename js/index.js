@@ -67,9 +67,9 @@ var passwordRegisterInput = document.getElementById("passwordRegisterInput");
 var registerBtn = document.getElementById("registerBtn");
 var alertRegister = document.querySelector(".alert-register");
 
-var emailRegex = /[\w]+@[a-zA-Z]+.com/g;
-var passwordRegex = /\w{8,}/gi;
-var nameRegex = /\w{3,}/gi;
+var emailRegex = /[\w]+@[a-zA-Z]+.com/;
+var passwordRegex = /\w{8,}/i;
+var nameRegex = /\w{3,}/i;
 var members = [];
 
 if (localStorage.getItem("members")) {
@@ -83,15 +83,8 @@ registerBtn.addEventListener("click", function (e) {
     passwordRegex.test(passwordRegisterInput.value) &&
     nameRegex.test(nameInput.value)
   ) {
-    
-    
     check();
-  }
-   else {
-    console.log(emailRegisterInput.value , emailRegex.test(emailRegisterInput.value)  );
-    console.log(passwordRegisterInput.value, passwordRegex.test(passwordRegisterInput.value) );
-    console.log(nameInput.value , nameRegex.test(nameInput.value));
-    
+  } else {
     alertRegister.classList.replace("d-none", "d-block");
     alertRegister.classList.add("alert-danger");
     setTimeout(function () {
@@ -104,17 +97,17 @@ registerBtn.addEventListener("click", function (e) {
 function check() {
   var emailCheck = false;
 
-  
-
   for (var i = 0; i < members.length; i++) {
     if (members[i].email === emailRegisterInput.value) {
       console.log("Matching");
       alertRegister.classList.add("alert-danger");
       alertRegister.classList.replace("d-none", "d-block");
       setTimeout(function () {
+        alertRegister.classList.remove("alert-danger");
         alertRegister.classList.replace("d-block", "d-none");
       }, 2000);
       alertRegister.innerHTML = "This Email is already exists";
+
       emailCheck = true;
       break;
     }

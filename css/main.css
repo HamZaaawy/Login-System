@@ -25,6 +25,9 @@ body {
 
 /* =========================== */
 /*===== Intro =====*/
+.intro-animation {
+  z-index: 99999999;
+}
 .side-one,
 .side-two {
   width: 100%;
