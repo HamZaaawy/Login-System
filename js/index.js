@@ -85,28 +85,19 @@ registerBtn.addEventListener("click", function (e) {
   ) {
     check();
   } else {
-    alertRegister.classList.replace("d-none", "d-block");
-    alertRegister.classList.add("alert-danger");
-    setTimeout(function () {
-      alertRegister.classList.replace("d-block", "d-none");
-      alertRegister.classList.remove("alert-danger");
-    }, 2000);
+    showAlert(alertRegister, "d-none", "d-block", "alert-danger");
+    hiddenAlert(alertRegister, "d-block", "d-none", "alert-danger");
     alertRegister.innerHTML = "Please Check Your data";
   }
 });
 function check() {
   var emailCheck = false;
-
   for (var i = 0; i < members.length; i++) {
     if (members[i].email === emailRegisterInput.value) {
       console.log("Matching");
-      alertRegister.classList.add("alert-danger");
-      alertRegister.classList.replace("d-none", "d-block");
-      setTimeout(function () {
-        alertRegister.classList.remove("alert-danger");
-        alertRegister.classList.replace("d-block", "d-none");
-      }, 2000);
+      showAlert(alertRegister, "d-none", "d-block", "alert-danger");
       alertRegister.innerHTML = "This Email is already exists";
+      hiddenAlert(alertRegister, "d-block", "d-none", "alert-danger");
 
       emailCheck = true;
       break;
@@ -114,12 +105,8 @@ function check() {
   }
   if (!emailCheck) {
     addNewMember();
-    alertRegister.classList.replace("d-none", "d-block");
-    alertRegister.classList.add("alert-success");
-    setTimeout(function () {
-      alertRegister.classList.replace("d-block", "d-none");
-      alertRegister.classList.remove("alert-success");
-    }, 2000);
+    showAlert(alertRegister, "d-none", "d-block", "alert-success");
+    hiddenAlert(alertRegister, "d-block", "d-none", "alert-success");
     alertRegister.innerHTML = "Done";
     nameInput.value = "";
     emailRegisterInput.value = "";
@@ -167,18 +154,14 @@ nameInput.addEventListener("blur", function () {
 loginBtn.addEventListener("click", function (e) {
   e.preventDefault();
   loginCheck();
-  console.log(nameOfLogin);
 });
-
 function loginCheck() {
   for (var i = 0; i < members.length; i++) {
     if (
       emailLoginInput.value === members[i].email &&
       passwordLoginInput.value === members[i].password
     ) {
-      loginAlert.classList.replace("d-none", "d-block");
-      loginAlert.classList.remove("alert-danger");
-      loginAlert.classList.add("alert-success");
+      showAlert(loginAlert, "d-none", "d-block", "alert-success");
       loginAlert.innerHTML = "Welcome";
       var memberName = members[i].name;
       localStorage.setItem("member name", memberName);
@@ -187,17 +170,21 @@ function loginCheck() {
         loginAlert.classList.remove("alert-success");
         window.open("home.html", "_self");
       }, 3000);
-
-      console.log(nameOfLogin);
     } else {
-      loginAlert.classList.replace("d-none", "d-block");
-      loginAlert.classList.add("alert-danger");
+      showAlert(loginAlert, "d-none", "d-block", "alert-danger");
       loginAlert.innerHTML = "Wrong email or password";
-
-      setTimeout(function () {
-        loginAlert.classList.replace("d-block", "d-none");
-        loginAlert.classList.remove("alert-danger");
-      }, 3000);
+      hiddenAlert(loginAlert, "d-block", "d-none", "alert-danger");
     }
   }
+}
+
+function showAlert(alertType, firstStatue, secondStatue, alertStatue) {
+  alertType.classList.replace(firstStatue, secondStatue);
+  alertType.classList.add(alertStatue);
+}
+function hiddenAlert(alertType, fStatue, sStatue, alertStatue) {
+  setTimeout(function () {
+    alertType.classList.replace(fStatue, sStatue);
+    alertType.classList.remove(alertStatue);
+  }, 2000);
 }
